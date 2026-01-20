@@ -2,73 +2,76 @@
 import React from 'react';
 
 const Details: React.FC = () => {
-  const audience = [
-    { title: "DAF", desc: "Directeurs Administratifs et Financiers" },
-    { title: "CFO", desc: "Chief Financial Officers" },
-    { title: "Comptables", desc: "Responsables Comptabilité" },
-    { title: "DG", desc: "Directeurs Généraux & Décideurs" }
+  const targets = [
+    { 
+      title: "DAF / CFO", 
+      label: "Directions Financières", 
+      desc: "Optimisez votre pilotage et fiabilisez vos reportings stratégiques en temps réel.",
+      icon: "fa-chart-line" 
+    },
+    { 
+      title: "Directeurs Généraux", 
+      label: "Décideurs & DG", 
+      desc: "Accédez à une vision consolidée pour des prises de décisions éclairées.",
+      icon: "fa-user-tie" 
+    },
+    { 
+      title: "Resp. Comptables", 
+      label: "Experts Comptabilité", 
+      desc: "Automatisez vos flux financiers et sécurisez votre conformité fiscale.",
+      icon: "fa-calculator" 
+    },
+    { 
+      title: "IT Managers", 
+      label: "Responsables SI", 
+      desc: "Découvrez une solution agile, scalable et parfaitement intégrée.",
+      icon: "fa-server" 
+    }
   ];
 
   return (
     <section id="about" className="py-24 bg-white relative overflow-hidden">
+      {/* Subtile background element */}
+      <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-blue-100 to-transparent"></div>
+      
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
-          <div className="relative">
-            <div className="absolute -top-10 -left-10 w-40 h-40 bg-blue-50 rounded-full z-0"></div>
-            <img 
-              src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&q=80&w=800" 
-              alt="Professional session" 
-              className="relative z-10 rounded-3xl shadow-2xl grayscale hover:grayscale-0 transition-all duration-700"
-            />
-          </div>
-          
-          <div>
-            <span className="text-blue-600 font-bold tracking-widest uppercase text-sm mb-4 block">Thématique de l'événement</span>
-            <h2 className="text-4xl font-extrabold text-[#003366] mb-6 leading-tight">
-              Le DAF acteur du pilotage de la performance avec Sage FRP 1000
-            </h2>
-            <p className="text-lg text-slate-600 mb-8 leading-relaxed">
-              Dans un environnement économique en constante mutation, la réactivité financière n'est plus une option. Cette journée découverte vous permettra d'explorer comment <strong>Sage FRP 1000</strong> transforme vos données complexes en leviers de croissance stratégiques.
-            </p>
-            
-            <div className="space-y-6">
-              <div className="flex items-start space-x-4">
-                <div className="bg-blue-100 p-3 rounded-xl mt-1">
-                  <i className="fas fa-chart-line text-blue-600"></i>
-                </div>
-                <div>
-                  <h4 className="font-bold text-slate-900">Automatisation & Fiabilité</h4>
-                  <p className="text-slate-500 text-sm">Réduisez les tâches chronophages et sécurisez vos clôtures comptables.</p>
-                </div>
-              </div>
-              <div className="flex items-start space-x-4">
-                <div className="bg-blue-100 p-3 rounded-xl mt-1">
-                  <i className="fas fa-shield-alt text-blue-600"></i>
-                </div>
-                <div>
-                  <h4 className="font-bold text-slate-900">Conformité Locale & Internationale</h4>
-                  <p className="text-slate-500 text-sm">Gérez la complexité fiscale marocaine et multi-filiales avec sérénité.</p>
-                </div>
-              </div>
-            </div>
-          </div>
+        
+        {/* En-tête de section ciblé */}
+        <div className="text-center mb-20">
+          <span className="text-blue-600 font-bold tracking-widest uppercase text-xs mb-3 block">Public Cible</span>
+          <h2 className="text-3xl md:text-5xl font-extrabold text-[#003366]">Pour qui cet événement ?</h2>
+          <div className="h-1.5 w-24 bg-blue-500 mx-auto mt-6 rounded-full"></div>
+          <p className="text-slate-500 mt-8 max-w-2xl mx-auto text-lg leading-relaxed">
+            Cette matinée de découverte est spécifiquement conçue pour les acteurs de la transformation financière et les décideurs cherchant à optimiser leur performance avec Sage FRP 1000.
+          </p>
         </div>
 
-        <div className="mt-24 bg-slate-50 rounded-3xl p-10 md:p-16 border border-slate-100">
-          <div className="text-center mb-12">
-            <h3 className="text-3xl font-bold text-[#003366]">À qui s'adresse cet événement ?</h3>
-            <div className="h-1.5 w-20 bg-blue-500 mx-auto mt-4 rounded-full"></div>
-          </div>
-          
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-            {audience.map((item, idx) => (
-              <div key={idx} className="text-center group">
-                <div className="w-16 h-16 bg-white shadow-lg rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:-translate-y-2 transition-transform duration-300">
-                  <span className="text-xl font-black text-blue-600">{item.title}</span>
-                </div>
-                <p className="text-slate-600 font-medium text-sm">{item.desc}</p>
+        {/* Grille des profils cibles */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          {targets.map((item, idx) => (
+            <div 
+              key={idx} 
+              className="group bg-slate-50 hover:bg-white p-10 rounded-[40px] border border-transparent hover:border-blue-100 hover:shadow-2xl transition-all duration-300 flex flex-col items-center text-center"
+            >
+              <div className="w-16 h-16 bg-white shadow-sm rounded-2xl flex items-center justify-center mb-8 group-hover:bg-blue-600 group-hover:text-white transition-all duration-300 text-blue-600 border border-slate-100">
+                <i className={`fas ${item.icon} text-3xl`}></i>
               </div>
-            ))}
+              <h4 className="text-xl font-bold text-[#003366] mb-2">{item.title}</h4>
+              <p className="text-blue-600 text-xs font-bold uppercase tracking-wider mb-4">{item.label}</p>
+              <p className="text-slate-500 text-sm leading-relaxed">
+                {item.desc}
+              </p>
+            </div>
+          ))}
+        </div>
+
+        {/* Note de bas de section */}
+        <div className="mt-20 flex justify-center">
+          <div className="inline-flex items-center space-x-3 bg-blue-50 px-8 py-4 rounded-full border border-blue-100 shadow-sm">
+            <i className="fas fa-info-circle text-blue-600 text-lg"></i>
+            <span className="text-blue-900 text-sm font-medium">
+              Événement professionnel sur invitation uniquement. <strong>Places strictement limitées.</strong>
+            </span>
           </div>
         </div>
       </div>

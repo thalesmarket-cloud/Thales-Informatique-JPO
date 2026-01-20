@@ -37,8 +37,8 @@ const Footer: React.FC = () => {
       <div className="max-w-6xl mx-auto flex flex-col items-center">
         <div className="mb-6 opacity-80 hover:opacity-100 transition-opacity">
            <img 
-            src="https://i.ibb.co/7qJYP8w/1.png" 
-            alt="Thalès Informatique | Sage" 
+            src="https://i.ibb.co/p6F8sRrQ/Logo-Thales-White.png" 
+            alt="Thalès Informatique" 
             className="h-10 w-auto object-contain"
           />
         </div>
