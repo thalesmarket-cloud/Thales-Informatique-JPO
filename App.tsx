@@ -1,13 +1,13 @@
 
-import React, { useState } from 'react';
-import Header from './components/Header';
-import Hero from './components/Hero';
-import Details from './components/Details';
-import Speakers from './components/Speakers';
-import Location from './components/Location';
-import RegistrationForm from './components/RegistrationForm';
-import Footer from './components/Footer';
-import Assistant from './components/Assistant';
+import React from 'react';
+import Header from './components/Header.tsx';
+import Hero from './components/Hero.tsx';
+import Details from './components/Details.tsx';
+import Speakers from './components/Speakers.tsx';
+import Location from './components/Location.tsx';
+import RegistrationForm from './components/RegistrationForm.tsx';
+import Footer from './components/Footer.tsx';
+import Assistant from './components/Assistant.tsx';
 
 const App: React.FC = () => {
   return (

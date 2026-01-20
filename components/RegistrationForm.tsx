@@ -1,6 +1,6 @@
 
 import React, { useState } from 'react';
-import { FormData } from '../types';
+import { FormData } from '../types.ts';
 
 const RegistrationForm: React.FC = () => {
   const [formState, setFormState] = useState<FormData>({
