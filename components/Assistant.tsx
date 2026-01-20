@@ -26,22 +26,25 @@ const Assistant: React.FC = () => {
     setIsLoading(true);
 
     try {
+      // Re-initialize for each call to ensure the latest API key from environment is used
       const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
       const response = await ai.models.generateContent({
         model: 'gemini-3-flash-preview',
-        contents: `Tu es un assistant utile pour l'événement "Journée Découverte Sage Maroc" organisé par Thalès Informatique et Sage Maroc.
-        Détails de l'événement:
-        - Date: 4 février 2026
-        - Heure: 09:30 à 12:30
-        - Lieu: Marina Casablanca, Tour Crystal 1, Niveau 9
-        - Thème: Le DAF acteur du pilotage de la performance
-        - Intervenants: Chupa FLOSY (Sage France) et Yassine REDA (Thalès Informatique)
-        - Audience: DAF, CFO, Responsables Financiers.
-        Réponds de manière professionnelle, concise et encourage l'utilisateur à réserver sa place.
-        
-        Question de l'utilisateur: ${userMsg}`,
+        contents: userMsg,
+        config: {
+          systemInstruction: `Tu es un assistant utile pour l'événement "Journée Découverte Sage Maroc" organisé par Thalès Informatique et Sage Maroc.
+          Détails de l'événement:
+          - Date: 4 février 2026
+          - Heure: 09:30 à 12:30
+          - Lieu: Marina Casablanca, Tour Crystal 1, Niveau 9
+          - Thème: Le DAF acteur du pilotage de la performance
+          - Intervenants: Chupa FLOSY (Sage France) et Yassine REDA (Thalès Informatique)
+          - Audience: DAF, CFO, Responsables Financiers.
+          Réponds de manière professionnelle, concise et encourage l'utilisateur à réserver sa place.`,
+        },
       });
 
+      // Directly access .text property as per GenerateContentResponse definition
       const aiText = response.text || "Je m'excuse, je rencontre une difficulté technique. Veuillez contacter notre équipe commerciale directement.";
       setMessages(prev => [...prev, { role: 'assistant', text: aiText }]);
     } catch (error) {

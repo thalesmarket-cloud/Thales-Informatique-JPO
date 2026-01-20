@@ -23,9 +23,9 @@ const Details: React.FC = () => {
           </div>
           
           <div>
-            <span className="text-blue-600 font-bold tracking-widest uppercase text-sm mb-4 block">Thème de la session</span>
+            <span className="text-blue-600 font-bold tracking-widest uppercase text-sm mb-4 block">Thématique de l'événement</span>
             <h2 className="text-4xl font-extrabold text-[#003366] mb-6 leading-tight">
-              Optimisez votre pilotage financier avec l'agilité de Sage FRP 1000
+              Le DAF acteur du pilotage de la performance avec Sage FRP 1000
             </h2>
             <p className="text-lg text-slate-600 mb-8 leading-relaxed">
               Dans un environnement économique en constante mutation, la réactivité financière n'est plus une option. Cette journée découverte vous permettra d'explorer comment <strong>Sage FRP 1000</strong> transforme vos données complexes en leviers de croissance stratégiques.

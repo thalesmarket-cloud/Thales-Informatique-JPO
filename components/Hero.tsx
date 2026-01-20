@@ -26,13 +26,19 @@ const Hero: React.FC = () => {
             <span className="text-blue-400">Sage Maroc</span>
           </h1>
           
-          <p className="text-xl md:text-2xl text-blue-100 font-light mb-10 leading-relaxed">
-            Optimisation de la performance financière avec <strong className="font-bold text-white">Sage FRP 1000</strong>. Une session exclusive pour repenser vos processus décisionnels.
-          </p>
+          <div className="mb-10">
+            <span className="block text-blue-400 font-bold uppercase tracking-widest text-sm mb-2">Thématique de l'événement :</span>
+            <p className="text-2xl md:text-3xl text-white font-bold leading-relaxed">
+              Le DAF acteur du pilotage de la performance
+            </p>
+            <p className="text-lg text-blue-100 font-light mt-4 italic">
+              Optimisation de la performance financière avec Sage FRP 1000.
+            </p>
+          </div>
           
           <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
             <a 
-              href="#register" 
+              href="#reservation" 
               className="px-10 py-5 bg-white text-[#003366] rounded-xl font-bold text-lg hover:bg-blue-50 transition-all shadow-2xl hover:-translate-y-1 text-center"
             >
               Réserver ma place

@@ -37,9 +37,12 @@ const App: React.FC = () => {
               <span className="inline-block bg-blue-100 text-blue-700 text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full mb-4">
                 Invitation Prioritaire
               </span>
-              <h1 className="text-4xl md:text-5xl font-extrabold text-[#003366] leading-tight mb-6">
-                Le DAF acteur du pilotage de la performance
-              </h1>
+              <div className="mb-6">
+                <span className="block text-sm font-bold text-blue-600 uppercase tracking-widest mb-2">Thématique de l'événement :</span>
+                <h1 className="text-4xl md:text-5xl font-extrabold text-[#003366] leading-tight">
+                  Le DAF acteur du pilotage de la performance
+                </h1>
+              </div>
               <p className="text-lg text-slate-600 leading-relaxed">
                 Une matinée exclusive dédiée aux directions financières pour découvrir comment automatiser vos processus et sécuriser votre pilotage stratégique avec les solutions Sage.
               </p>

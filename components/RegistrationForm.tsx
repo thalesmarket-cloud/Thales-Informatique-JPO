@@ -2,7 +2,8 @@
 import React, { useState } from 'react';
 
 // REMPLACEZ CETTE URL par l'URL obtenue à l'étape 3 du déploiement Google Apps Script
-const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwJA6uTg9tv39pQjpF2_kERQLfj8a4X_iMcslPeF79u2BzBnjJuH_PioJ4q2FXxxmPCNw/exec';
+// Fix: Explicitly type as string to avoid type overlap error in the strict comparison below.
+const GOOGLE_SCRIPT_URL: string = 'https://script.google.com/macros/s/AKfycbwJA6uTg9tv39pQjpF2_kERQLfj8a4X_iMcslPeF79u2BzBnjJuH_PioJ4q2FXxxmPCNw/exec';
 
 interface FormData {
   fullName: string;
@@ -51,6 +52,7 @@ const RegistrationForm: React.FC = () => {
     
     try {
       // 1. Envoi vers Google Sheets (Excel Online) via App Script
+      // This comparison is now valid as both sides are compatible string types
       if (GOOGLE_SCRIPT_URL !== 'VOTRE_URL_APP_SCRIPT_ICI') {
         await fetch(GOOGLE_SCRIPT_URL, {
           method: 'POST',
