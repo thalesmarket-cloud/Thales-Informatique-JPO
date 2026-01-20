@@ -13,7 +13,7 @@ const Speakers: React.FC = () => {
       name: "Yassine REDA",
       role: "Directeur Commercial",
       company: "Thalès Informatique",
-      imageUrl: "https://i.ibb.co/Wp3SXps8/Sans-titre.jpg"
+      imageUrl: "https://i.ibb.co/4gPn0Jjv/Whats-App-Image-2026-01-18-at-21-05-55.jpg"
     }
   ];
 
