@@ -7,14 +7,9 @@ export interface Speaker {
 }
 
 export interface FormData {
-  firstName: string;
-  lastName: string;
+  fullName: string;
   email: string;
   phone: string;
   company: string;
-  position: string;
-  confirmAttendance: 'Oui' | 'Non';
-  participants: number;
-  expectations: string;
   consent: boolean;
 }

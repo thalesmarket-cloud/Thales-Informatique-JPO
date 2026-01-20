@@ -2,6 +2,7 @@
 import React from 'react';
 import RegistrationForm from './components/RegistrationForm.tsx';
 import Assistant from './components/Assistant.tsx';
+import Footer from './components/Footer.tsx';
 
 const App: React.FC = () => {
   return (
@@ -34,7 +35,7 @@ const App: React.FC = () => {
           <div className="space-y-10">
             <div>
               <span className="inline-block bg-blue-100 text-blue-700 text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full mb-4">
-                4 Février 2026
+                Invitation Prioritaire
               </span>
               <h1 className="text-4xl md:text-5xl font-extrabold text-[#003366] leading-tight mb-6">
                 Le DAF acteur du pilotage de la performance
@@ -44,15 +45,16 @@ const App: React.FC = () => {
               </p>
             </div>
 
-            {/* Cartes Info */}
+            {/* Cartes Info Mise à jour avec la Date */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div className="bg-white p-6 rounded-2xl shadow-sm border border-slate-100 flex items-start space-x-4">
                 <div className="text-blue-600 bg-blue-50 p-3 rounded-lg">
-                  <i className="fas fa-calendar-day text-xl"></i>
+                  <i className="fas fa-calendar-alt text-xl"></i>
                 </div>
                 <div>
-                  <p className="text-xs font-bold text-slate-400 uppercase tracking-tighter">Horaires</p>
-                  <p className="font-bold text-slate-800">09:30 – 12:30</p>
+                  <p className="text-xs font-bold text-slate-400 uppercase tracking-tighter">Date & Horaires</p>
+                  <p className="font-bold text-slate-800">4 Février 2026</p>
+                  <p className="text-sm text-slate-500 font-medium">09:30 – 12:30</p>
                 </div>
               </div>
               <div className="bg-white p-6 rounded-2xl shadow-sm border border-slate-100 flex items-start space-x-4">
@@ -60,7 +62,7 @@ const App: React.FC = () => {
                   <i className="fas fa-map-marker-alt text-xl"></i>
                 </div>
                 <div>
-                  <p className="text-xs font-bold text-slate-400 uppercase tracking-tighter">Lieu</p>
+                  <p className="text-xs font-bold text-slate-400 uppercase tracking-tighter">Lieu de l'événement</p>
                   <p className="font-bold text-slate-800">Marina Casablanca</p>
                   <p className="text-sm text-slate-500">Tour Crystal 1, Niv. 9</p>
                 </div>
@@ -74,8 +76,8 @@ const App: React.FC = () => {
                 Intervenants
               </h3>
               <div className="grid grid-cols-1 gap-3">
-                <div className="flex items-center space-x-4 p-4 bg-white rounded-2xl border border-slate-100 shadow-sm">
-                  <div className="w-12 h-12 overflow-hidden rounded-full border-2 border-slate-100 shadow-inner">
+                <div className="flex items-center space-x-4 p-4 bg-white rounded-2xl border border-slate-100 shadow-sm hover:border-blue-200 transition-colors cursor-default">
+                  <div className="w-14 h-14 overflow-hidden rounded-full border-2 border-slate-100 shadow-inner">
                     <img 
                       src="https://i.ibb.co/MkgmG56k/1560775947214.jpg" 
                       alt="Chupa FLOSY" 
@@ -87,8 +89,8 @@ const App: React.FC = () => {
                     <p className="text-xs text-slate-500">Expert Avant-Vente, Sage France</p>
                   </div>
                 </div>
-                <div className="flex items-center space-x-4 p-4 bg-white rounded-2xl border border-slate-100 shadow-sm">
-                  <div className="w-12 h-12 overflow-hidden rounded-full border-2 border-slate-100 shadow-inner">
+                <div className="flex items-center space-x-4 p-4 bg-white rounded-2xl border border-slate-100 shadow-sm hover:border-blue-200 transition-colors cursor-default">
+                  <div className="w-14 h-14 overflow-hidden rounded-full border-2 border-slate-100 shadow-inner">
                     <img 
                       src="https://i.ibb.co/Wp3SXps8/Sans-titre.jpg" 
                       alt="Yassine REDA" 
@@ -117,22 +119,7 @@ const App: React.FC = () => {
       </main>
 
       <Assistant />
-
-      <footer className="w-full bg-slate-900 text-slate-400 py-12 px-4 mt-auto">
-        <div className="max-w-6xl mx-auto flex flex-col items-center">
-          <div className="mb-6 opacity-80 hover:opacity-100 transition-opacity">
-             <img 
-              src="https://i.ibb.co/7qJYP8w/1.png" 
-              alt="Thalès Informatique | Sage" 
-              className="h-10 w-auto object-contain"
-            />
-          </div>
-          <p className="text-sm mb-4 text-center">© 2026 Thalès Informatique & Sage Maroc.</p>
-          <p className="text-xs italic opacity-60 text-center">
-            Participation sur invitation uniquement. Nombre de places limité.
-          </p>
-        </div>
-      </footer>
+      <Footer />
     </div>
   );
 };

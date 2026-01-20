@@ -1,39 +1,60 @@
 
 import React from 'react';
+import * as XLSX from 'xlsx';
 
 const Footer: React.FC = () => {
+  const handleExportExcel = () => {
+    const data = JSON.parse(localStorage.getItem('event_leads') || '[]');
+    
+    if (data.length === 0) {
+      alert("Aucune inscription enregistrée pour le moment.");
+      return;
+    }
+
+    // Préparation des données pour Excel avec des en-têtes propres
+    const excelData = data.map((item: any) => ({
+      "Date d'inscription": item.submittedAt,
+      "Nom complet": item.fullName,
+      "Email": item.email,
+      "Téléphone": item.phone,
+      "Société": item.company
+    }));
+
+    const worksheet = XLSX.utils.json_to_sheet(excelData);
+    const workbook = XLSX.utils.book_new();
+    XLSX.utils.book_append_sheet(workbook, worksheet, "Inscriptions");
+
+    // Génération et téléchargement du fichier
+    XLSX.writeFile(workbook, `Inscriptions_Sage_Maroc_${new Date().toISOString().split('T')[0]}.xlsx`);
+    
+    if(confirm("Fichier exporté avec succès. Souhaitez-vous vider la liste des inscriptions locales ?")) {
+        localStorage.removeItem('event_leads');
+    }
+  };
+
   return (
-    <footer className="bg-white py-12 border-t border-slate-100">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex flex-col md:flex-row justify-between items-center mb-10">
-          <div className="flex items-center mb-8 md:mb-0">
-            <img 
-              src="https://i.ibb.co/7qJYP8w/1.png" 
-              alt="Thalès Informatique | Sage" 
-              className="h-12 w-auto object-contain"
-            />
-          </div>
-          
-          <div className="flex space-x-6">
-            <a href="#" className="w-10 h-10 bg-slate-50 rounded-full flex items-center justify-center text-slate-400 hover:bg-blue-600 hover:text-white transition-all">
-              <i className="fab fa-linkedin-in"></i>
-            </a>
-            <a href="#" className="w-10 h-10 bg-slate-50 rounded-full flex items-center justify-center text-slate-400 hover:bg-blue-600 hover:text-white transition-all">
-              <i className="fab fa-twitter"></i>
-            </a>
-            <a href="#" className="w-10 h-10 bg-slate-50 rounded-full flex items-center justify-center text-slate-400 hover:bg-blue-600 hover:text-white transition-all">
-              <i className="fas fa-globe"></i>
-            </a>
-          </div>
+    <footer className="w-full bg-slate-900 text-slate-400 py-12 px-4 mt-auto">
+      <div className="max-w-6xl mx-auto flex flex-col items-center">
+        <div className="mb-6 opacity-80 hover:opacity-100 transition-opacity">
+           <img 
+            src="https://i.ibb.co/7qJYP8w/1.png" 
+            alt="Thalès Informatique | Sage" 
+            className="h-10 w-auto object-contain"
+          />
         </div>
-        
-        <div className="pt-8 border-t border-slate-50 text-center md:text-left flex flex-col md:flex-row justify-between items-center">
-          <p className="text-slate-400 text-sm mb-4 md:mb-0">
-            &copy; 2026 Thalès Informatique. Tous droits réservés.
-          </p>
-          <p className="text-slate-400 text-xs italic">
-            Participation sur invitation uniquement. Événement professionnel B2B.
-          </p>
+        <p className="text-sm mb-4 text-center">© 2026 Thalès Informatique & Sage Maroc. Tous droits réservés.</p>
+        <div className="flex items-center space-x-2">
+            <p className="text-xs italic opacity-60 text-center">
+              Participation sur invitation uniquement. Nombre de places limité.
+            </p>
+            {/* Accès Admin discret */}
+            <button 
+              onClick={handleExportExcel}
+              className="text-slate-700 hover:text-slate-500 transition-colors p-1"
+              title="Admin: Exporter Excel"
+            >
+              <i className="fas fa-lock text-[10px]"></i>
+            </button>
         </div>
       </div>
     </footer>
