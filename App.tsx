@@ -2,10 +2,12 @@
 import React from 'react';
 import Hero from './components/Hero.tsx';
 import Details from './components/Details.tsx';
+import Agenda from './components/Agenda.tsx';
 import Speakers from './components/Speakers.tsx';
 import Location from './components/Location.tsx';
 import RegistrationForm from './components/RegistrationForm.tsx';
 import Footer from './components/Footer.tsx';
+import Assistant from './components/Assistant.tsx';
 
 const App: React.FC = () => {
   return (
@@ -38,6 +40,9 @@ const App: React.FC = () => {
         {/* Section Cible: "Pour qui cet événement ?" */}
         <Details />
 
+        {/* Section Agenda: Le programme détaillé */}
+        <Agenda />
+
         {/* Section Intervenants: Experts Sage & Thalès */}
         <Speakers />
 
@@ -65,6 +70,9 @@ const App: React.FC = () => {
       </main>
 
       <Footer />
+      
+      {/* Assistant IA flottant */}
+      <Assistant />
     </div>
   );
 };
