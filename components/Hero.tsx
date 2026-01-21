@@ -3,78 +3,74 @@ import React from 'react';
 
 const Hero: React.FC = () => {
   return (
-    <section className="relative min-h-[90vh] flex items-center pt-20 overflow-hidden">
-      {/* Background with Darkened Overlay for Text Readability */}
+    <section className="relative min-h-screen flex items-center pt-20 bg-[#003366] overflow-hidden">
+      {/* Background with overlay */}
       <div className="absolute inset-0 z-0">
         <img 
           src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=2000" 
           alt="Casablanca Marina" 
-          className="w-full h-full object-cover"
+          className="w-full h-full object-cover opacity-40"
         />
-        {/* L'overlay sage-gradient défini dans l'index.html assure le contraste */}
-        <div className="absolute inset-0 sage-gradient mix-blend-multiply"></div>
-        {/* Second overlay subtil pour renforcer le bas de l'image */}
-        <div className="absolute inset-0 bg-gradient-to-t from-[#003366] via-transparent to-transparent opacity-60"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-[#003366] via-[#003366]/80 to-transparent"></div>
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-white">
-        <div className="max-w-4xl">
-          <div className="inline-flex items-center space-x-2 bg-blue-500/30 backdrop-blur-md px-4 py-2 rounded-full border border-white/20 mb-8 animate-fade-in shadow-xl">
-            <i className="far fa-calendar-alt text-blue-300"></i>
-            <span className="text-sm font-bold uppercase tracking-wider">4 Février 2026 | 09:30 – 12:30</span>
+        <div className="max-w-3xl animate-fade-in">
+          <div className="inline-flex items-center space-x-2 bg-blue-500/20 backdrop-blur-sm px-4 py-2 rounded-full border border-white/10 mb-6">
+            <i className="far fa-calendar-alt text-blue-400"></i>
+            <span className="text-xs md:text-sm font-bold uppercase tracking-widest">4 Février 2026 | Casablanca</span>
           </div>
           
-          <h1 className="text-5xl md:text-7xl font-extrabold leading-tight mb-6 drop-shadow-lg">
+          <h1 className="text-4xl md:text-7xl font-extrabold leading-tight mb-6">
             Journée Porte Ouverte <br/>
             <span className="text-blue-400">Thalès Informatique</span>
           </h1>
           
-          <div className="mb-10 bg-black/10 backdrop-blur-sm p-6 rounded-2xl border border-white/10 inline-block">
-            <span className="block text-blue-400 font-bold uppercase tracking-widest text-xs mb-2">Thématique de l'événement :</span>
-            <p className="text-2xl md:text-3xl text-white font-bold leading-relaxed">
-              Le DAF acteur du pilotage de la performance
-            </p>
-            <p className="text-lg text-blue-100 font-light mt-3 italic border-l-4 border-blue-500 pl-4">
-              Du closing au pilotage financier en temps réel avec Sage FRP 1000.
-            </p>
-          </div>
+          <p className="text-lg md:text-2xl text-slate-300 mb-10 leading-relaxed font-medium">
+            Découvrez comment Sage FRP 1000 transforme le rôle du DAF en véritable acteur du pilotage de la performance.
+          </p>
           
-          {/* Nouveau layout : Bouton et Icônes sur la même ligne */}
-          <div className="flex flex-col lg:flex-row items-start lg:items-center gap-8 lg:gap-12 animate-fade-in">
+          <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 md:gap-8 mb-12">
+            <div className="flex items-center space-x-3">
+              <div className="w-10 h-10 bg-blue-600 rounded-lg flex items-center justify-center">
+                <i className="fas fa-map-marker-alt"></i>
+              </div>
+              <div>
+                <p className="text-sm font-bold">Marina Casablanca</p>
+                <p className="text-xs text-slate-400">Tour Crystal 1, Niveau 9</p>
+              </div>
+            </div>
+            <div className="w-px h-8 bg-white/10 hidden sm:block"></div>
+            <div className="flex items-center space-x-3">
+              <div className="w-10 h-10 bg-blue-600 rounded-lg flex items-center justify-center">
+                <i className="fas fa-clock"></i>
+              </div>
+              <div>
+                <p className="text-sm font-bold">09:30 – 12:30</p>
+                <p className="text-xs text-slate-400">Matinée d'échanges</p>
+              </div>
+            </div>
+          </div>
+
+          <div className="flex flex-wrap gap-4">
             <a 
               href="#reservation" 
-              className="px-10 py-5 bg-white text-[#003366] rounded-xl font-bold text-lg hover:bg-blue-50 transition-all shadow-2xl hover:-translate-y-1 text-center whitespace-nowrap min-w-[240px]"
+              className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-xl font-bold text-lg transition-all shadow-xl shadow-blue-900/40 hover:-translate-y-1"
             >
               Réserver ma place
             </a>
-
-            <div className="flex flex-wrap items-center gap-8 md:gap-10">
-              <div className="flex items-center space-x-4 group">
-                <div className="w-12 h-12 bg-blue-500/20 backdrop-blur-md rounded-xl flex items-center justify-center border border-white/10 group-hover:bg-blue-500/40 transition-all duration-300">
-                  <i className="fas fa-map-marker-alt text-2xl text-blue-300"></i>
-                </div>
-                <div className="text-sm">
-                  <p className="font-bold text-lg leading-tight">Marina Casablanca</p>
-                  <p className="text-blue-200 font-medium">Tour Crystal 1, Niveau 9</p>
-                </div>
-              </div>
-              
-              <div className="flex items-center space-x-4 group">
-                <div className="w-12 h-12 bg-blue-500/20 backdrop-blur-md rounded-xl flex items-center justify-center border border-white/10 group-hover:bg-blue-500/40 transition-all duration-300">
-                  <i className="fas fa-users text-2xl text-blue-300"></i>
-                </div>
-                <div className="text-sm">
-                  <p className="font-bold text-lg leading-tight">Capacité Limitée</p>
-                  <p className="text-blue-200 font-medium">Exclusivement B2B</p>
-                </div>
-              </div>
-            </div>
+            <a 
+              href="#agenda" 
+              className="bg-white/10 hover:bg-white/20 backdrop-blur-md text-white px-8 py-4 rounded-xl font-bold text-lg transition-all border border-white/10"
+            >
+              Voir le programme
+            </a>
           </div>
         </div>
       </div>
 
-      {/* Decorative Blur */}
-      <div className="absolute right-0 bottom-0 w-1/3 h-2/3 bg-blue-500/10 blur-[120px] rounded-full -mr-20 -mb-20"></div>
+      {/* Decorative element */}
+      <div className="absolute bottom-0 right-0 w-1/3 h-full bg-gradient-to-l from-blue-600/10 to-transparent hidden lg:block"></div>
     </section>
   );
 };
