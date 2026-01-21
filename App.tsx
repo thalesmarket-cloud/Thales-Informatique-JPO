@@ -10,21 +10,21 @@ import Footer from './components/Footer.tsx';
 
 const App: React.FC = () => {
   return (
-    <div className="min-h-screen bg-slate-50 font-sans text-slate-900 scroll-smooth">
-      {/* Navigation Header */}
-      <header className="absolute top-0 w-full z-50 py-6 px-4">
+    <div className="min-h-screen bg-white font-sans text-slate-900 scroll-smooth">
+      {/* Navigation Header - Style Screenshot */}
+      <header className="absolute top-0 w-full z-50 py-8 px-6 md:px-12">
         <div className="max-w-7xl mx-auto flex justify-between items-center">
           <div className="flex items-center">
             <img 
               src="https://i.ibb.co/p6F8sRrQ/Logo-Thales-White.png" 
               alt="Thalès Informatique" 
-              className="h-10 md:h-14 w-auto object-contain"
+              className="h-8 md:h-10 w-auto object-contain"
             />
           </div>
           <div className="hidden md:block">
             <a 
               href="#reservation" 
-              className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-full font-bold text-sm transition-all shadow-lg shadow-blue-900/20"
+              className="bg-[#2563eb] hover:bg-blue-700 text-white px-8 py-3 rounded-full font-bold text-sm transition-all shadow-lg"
             >
               Réserver ma place
             </a>
@@ -33,33 +33,27 @@ const App: React.FC = () => {
       </header>
 
       <main>
-        {/* Hero Section: Présentation de l'événement */}
+        {/* Hero Section: Design exact du screenshot */}
         <Hero />
 
-        {/* Section Cible: "Pour qui cet événement ?" */}
-        <Details />
+        {/* Section Suivante (Cible) qui recevra le chevauchement */}
+        <div className="pt-24 md:pt-32">
+          <Details />
+        </div>
 
-        {/* Section Agenda: Le programme détaillé */}
         <Agenda />
-
-        {/* Section Intervenants: Experts Sage & Thalès */}
         <Speakers />
-
-        {/* Section Lieu: Tour Crystal 1 */}
         <Location />
 
-        {/* Section Inscription: Formulaire final */}
+        {/* Section Inscription */}
         <section id="reservation" className="py-24 bg-[#003366] relative overflow-hidden">
-          <div className="absolute top-0 right-0 w-96 h-96 bg-blue-500/10 rounded-full -mr-48 -mt-48 blur-3xl"></div>
-          <div className="absolute bottom-0 left-0 w-96 h-96 bg-blue-400/10 rounded-full -ml-48 -mb-48 blur-3xl"></div>
-          
           <div className="max-w-4xl mx-auto px-4 relative z-10">
-            <div className="bg-white rounded-[40px] shadow-2xl p-8 md:p-16 border border-slate-100">
+            <div className="bg-white rounded-[40px] shadow-2xl p-8 md:p-16">
               <div className="text-center mb-12">
                 <span className="text-blue-600 font-bold uppercase tracking-widest text-sm">Inscription</span>
                 <h2 className="text-3xl md:text-4xl font-extrabold text-[#003366] mt-2">Confirmez votre présence</h2>
-                <p className="text-slate-500 mt-4 max-w-md mx-auto">
-                  La participation est exclusive et strictement limitée. Merci de renseigner vos coordonnées professionnelles ci-dessous.
+                <p className="text-slate-500 mt-4 max-w-md mx-auto text-sm md:text-base">
+                  La participation est exclusive et strictement limitée.
                 </p>
               </div>
               <RegistrationForm />
