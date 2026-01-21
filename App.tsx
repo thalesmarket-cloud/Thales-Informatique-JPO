@@ -7,18 +7,19 @@ import Speakers from './components/Speakers.tsx';
 import Location from './components/Location.tsx';
 import RegistrationForm from './components/RegistrationForm.tsx';
 import Footer from './components/Footer.tsx';
+import Assistant from './components/Assistant.tsx';
 
 const App: React.FC = () => {
   return (
-    <div className="min-h-screen bg-white font-sans text-slate-900 scroll-smooth">
+    <div className="min-h-screen bg-white font-sans text-slate-900 scroll-smooth flex flex-col">
       {/* Navigation Header - Style Screenshot */}
-      <header className="absolute top-0 w-full z-50 py-8 px-6 md:px-12">
+      <header className="absolute top-0 w-full z-50 py-6 md:py-8 px-6 md:px-12">
         <div className="max-w-7xl mx-auto flex justify-between items-center">
           <div className="flex items-center">
             <img 
               src="https://i.ibb.co/p6F8sRrQ/Logo-Thales-White.png" 
               alt="Thalès Informatique" 
-              className="h-8 md:h-10 w-auto object-contain"
+              className="h-7 md:h-10 w-auto object-contain"
             />
           </div>
           <div className="hidden md:block">
@@ -32,14 +33,12 @@ const App: React.FC = () => {
         </div>
       </header>
 
-      <main>
-        {/* Hero Section: Design exact du screenshot */}
+      <main className="flex-grow">
+        {/* Hero Section: Design exact du screenshot, optimisé en hauteur */}
         <Hero />
 
-        {/* Section Suivante (Cible) qui recevra le chevauchement */}
-        <div className="pt-24 md:pt-32">
-          <Details />
-        </div>
+        {/* Section Suivante: Plus de padding géant car le bouton est remonté */}
+        <Details />
 
         <Agenda />
         <Speakers />
@@ -63,6 +62,7 @@ const App: React.FC = () => {
       </main>
 
       <Footer />
+      <Assistant />
     </div>
   );
 };
