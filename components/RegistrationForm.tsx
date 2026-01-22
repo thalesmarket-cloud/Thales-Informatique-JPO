@@ -191,7 +191,7 @@ const RegistrationForm: React.FC = () => {
         </button>
         <p className="text-center text-xs font-bold text-red-600 mt-4 flex items-center justify-center space-x-2 animate-pulse">
           <i className="fas fa-exclamation-triangle"></i>
-          <span>Attention : il ne reste que 6 places disponibles pour cet événement.</span>
+          <span>Attention : il ne reste plus que quelques places disponibles pour cet événement.</span>
         </p>
       </div>
     </form>
